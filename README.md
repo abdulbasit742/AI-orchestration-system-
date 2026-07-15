@@ -34,10 +34,12 @@ The router contains 12 role definitions: Marketing, E-Commerce, Software Develop
 Requirements: Node.js 20 or newer.
 
 ```bash
-npm ci --ignore-scripts
+npm install --ignore-scripts --no-audit --no-fund
 cp .env.example .env.local
 npm run dev
 ```
+
+Direct dependency versions are exact. CI audits the complete resolved graph on every run. A generated lockfile containing environment-specific internal registry URLs is deliberately not published.
 
 Configure at least one provider with both its API key and model name. No default paid model is assumed.
 
